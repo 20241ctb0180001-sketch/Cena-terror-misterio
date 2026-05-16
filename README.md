@@ -1,2 +1,2 @@
-# Projeto cena de terror ou mistério
+# cena de terror/misterio
 
