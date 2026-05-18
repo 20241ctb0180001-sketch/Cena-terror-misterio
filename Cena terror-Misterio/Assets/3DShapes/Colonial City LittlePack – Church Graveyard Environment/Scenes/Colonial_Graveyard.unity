@@ -9729,6 +9729,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RandomVideo
   videoPlayer: {fileID: 1314777623}
+  glitchVids: videos
+  minInt: 2
+  maxInt: 5
 --- !u!328 &1314777623 stripped
 VideoPlayer:
   m_CorrespondingSourceObject: {fileID: -7604294752403555861, guid: 3410fe058b03f6544a51196feb5df00c, type: 3}
