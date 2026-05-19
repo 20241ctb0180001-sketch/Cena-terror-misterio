@@ -8,7 +8,7 @@ namespace DefaltNamespace
     {
         [SerializeField] Camera playerCam;
         [SerializeField] TextMeshProUGUI interactionText;
-        [SerializeField] float InteractionDistance = 2f;
+        [SerializeField] float InteractionDistance = 0.3f;
         Iinteractable currentTargetedInteractable;
         public void Update()
         {

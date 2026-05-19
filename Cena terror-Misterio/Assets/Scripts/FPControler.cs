@@ -15,7 +15,7 @@ namespace Artemis
 
         [SerializeField] float WalkSpeed = 0.5f;
         [SerializeField] float RunSpeed = 1f;
-        [SerializeField] float JumpHeight = 2f;
+        //[SerializeField] float JumpHeight = 2f;
 
         [Header("LookParameters")]
         public Vector2 LookSens = new Vector2(0.1f, 0.1f);
@@ -32,7 +32,7 @@ namespace Artemis
         }
 
         [Header("Physiscs")]
-        [SerializeField] float GravityScale = 3f;
+        //[SerializeField] float GravityScale = 3f;
         public Vector3 CurrVelocity { get; private set; }
         public float CurrSpeed { get; private set; }
         public bool grounded => controller.isGrounded;
