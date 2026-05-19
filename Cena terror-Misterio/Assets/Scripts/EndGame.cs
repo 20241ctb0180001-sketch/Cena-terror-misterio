@@ -5,12 +5,16 @@ namespace DefaltNamespace
 {
 public class EndGame : MonoBehaviour, Iinteractable
 {
+    [SerializeField] GameObject ritual;
+    [SerializeField] GameObject floor;
+
     public string InteractMessage => objectInteractMessage;
-    [SerializeField]  GameObject floor;
     [SerializeField] string objectInteractMessage;
+
     IEnumerator End()
     {
-        Destroy(gameObject);
+        yield return new WaitForSeconds(1.5f);
+        Destroy(ritual);
         yield return new WaitForSeconds(8f);
         floor.SetActive(false);
         yield return new WaitForSeconds(2.5f);
