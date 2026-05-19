@@ -22,6 +22,11 @@ namespace Artemis
             FpCtrl.LookInput = value.Get<Vector2>();
         }
 
+        void onSprint(InputValue value)
+        {
+            FpCtrl.SprintInput = value.isPressed;
+        }
+
         #endregion
 
         #region UnityMethods
