@@ -6,31 +6,40 @@ using UnityEngine.Video;
 public class RandomVideo : MonoBehaviour
 {
     [SerializeField] VideoPlayer videoPlayer;
-    public string glitchVids = "videos";
-    [SerializeField]float minInt;
-    [SerializeField]float maxInt;
+
+    //folder
+    [SerializeField] private string glitchVids = "videos";
+
+    [SerializeField] private float minInt;
+    [SerializeField] private float maxInt;
+
+    [SerializeField]private VideoClip[] videos;
     void Start(){
-        StartCoroutine(Randomizeplay());
+        videos = Resources.LoadAll<VideoClip>(glitchVids);
+        videoPlayer.clip = videos[0];
+        videoPlayer.Play();
+        StartCoroutine(RandomizePlay());
     }
 
-    IEnumerator Randomizeplay(){
+    IEnumerator RandomizePlay(){
         while(true){
             float wait= Random.Range(minInt, maxInt);
+
             PlayRandomVideo();
-            videoPlayer.Play();
+
             yield return new WaitForSeconds(wait);
-            videoPlayer.Stop();
+
+            videoPlayer?.Stop();
+
             yield return new WaitForSeconds(wait);
         }
     }
 
-     public void PlayRandomVideo()
+    public void PlayRandomVideo()
     {
-        VideoClip[] videos = Resources.LoadAll<VideoClip>(glitchVids);
-        if (videos.Length > 0){
-            int randomIndex = Random.Range(0, videos.Length);
-            videoPlayer.clip = videos[randomIndex];
-            //videoPlayer.Play();
-        }
+        int randomIndex = Random.Range(0, videos.Length);
+        videoPlayer?.Stop();
+        videoPlayer.clip = videos[randomIndex];
+        videoPlayer?.Play();
     }
 }
